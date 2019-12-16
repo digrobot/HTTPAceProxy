@@ -164,7 +164,7 @@ class AceClient(object):
         '''
         self._write(AceRequest.STOP)
 
-    def GetLOADASYNC(self, paramsdict):
+    def GetLOADASYNC(self, **paramsdict):
         try:
            self._response['LOADRESP'] = AsyncResult()
            self._write(AceRequest.LOADASYNC(paramsdict))
@@ -178,7 +178,7 @@ class AceClient(object):
            return self._response['STATUS'].get(timeout=self._responsetimeout) # Get status
         except: return {'status': 'error'}
 
-    def GetCONTENTINFO(self, paramsdict):
+    def GetCONTENTINFO(self, **paramsdict):
         paramsdict = self.GetLOADASYNC(paramsdict)
         if paramsdict.get('status') in (1, 2):
             return paramsdict
