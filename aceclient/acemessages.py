@@ -86,7 +86,7 @@ class AceRequest(object):
 
     @staticmethod
     def LOADASYNC(paramsdict):
-        return AceConst.LOADASYNC.get((viewkeys(AceConst.LOADASYNC) & viewkeys(paramsdict)).pop()).format(paramsdict)
+        return AceConst.LOADASYNC.get((viewkeys(AceConst.LOADASYNC) & viewkeys(paramsdict)).pop()).format(**paramsdict)
 
     @staticmethod
     def START(**paramsdict):
