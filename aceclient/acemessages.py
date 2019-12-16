@@ -85,7 +85,7 @@ class AceRequest(object):
         return 'READY key={}-{}'.format(product_key.split('-')[0], hashlib.sha1(ensure_binary(request_key+product_key)).hexdigest())
 
     @staticmethod
-    def LOADASYNC(**paramsdict):
+    def LOADASYNC(paramsdict):
         return AceConst.LOADASYNC.get((viewkeys(AceConst.LOADASYNC) & viewkeys(paramsdict)).pop()).format(paramsdict)
 
     @staticmethod
