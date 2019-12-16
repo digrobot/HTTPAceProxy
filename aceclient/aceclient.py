@@ -164,7 +164,7 @@ class AceClient(object):
         '''
         self._write(AceRequest.STOP)
 
-    def GetLOADASYNC(self, **paramsdict):
+    def GetLOADASYNC(self, paramsdict):
         try:
            self._response['LOADRESP'] = AsyncResult()
            self._write(AceRequest.LOADASYNC(paramsdict))
