@@ -85,30 +85,30 @@ class AceRequest(object):
         return 'READY key={}-{}'.format(product_key.split('-')[0], hashlib.sha1(ensure_binary(request_key+product_key)).hexdigest())
 
     @staticmethod
-    def LOADASYNC(paramsdict):
-        return AceConst.LOADASYNC.get((viewkeys(AceConst.LOADASYNC) & viewkeys(paramsdict)).pop()).format(**paramsdict)
+    def LOADASYNC(**paramsdict):
+        return AceConst.LOADASYNC.get((viewkeys(AceConst.LOADASYNC) & viewkeys(paramsdict)).pop()).format(paramsdict)
 
     @staticmethod
-    def START(paramsdict):
-        return AceConst.START.get((viewkeys(AceConst.START) & viewkeys(paramsdict)).pop()).format(**paramsdict)
+    def START(**paramsdict):
+        return AceConst.START.get((viewkeys(AceConst.START) & viewkeys(paramsdict)).pop()).format(paramsdict)
 
     STOP = 'STOP'
 
     @staticmethod
-    def GETCID(paramsdict):
-        return 'GETCID checksum={checksum} infohash={infohash} developer={developer_id} affiliate={affiliate_id} zone={zone_id}'.format(**paramsdict)
+    def GETCID(**paramsdict):
+        return 'GETCID checksum={checksum} infohash={infohash} developer={developer_id} affiliate={affiliate_id} zone={zone_id}'.format(paramsdict)
 
     @staticmethod
-    def GETADURL(paramsdict):
-        return 'GETADURL width={width} height={height} infohash={infohash} action={action}'.format(**paramsdict)
+    def GETADURL(**paramsdict):
+        return 'GETADURL width={width} height={height} infohash={infohash} action={action}'.format(paramsdict)
 
     @staticmethod
-    def USERDATA(paramsdict):
-        return 'USERDATA [{{"gender": {gender}}}, {{"age": {age}}}]'.format(**paramsdict)
+    def USERDATA(**paramsdict):
+        return 'USERDATA [{{"gender": {gender}}}, {{"age": {age}}}]'.format(paramsdict)
 
     @staticmethod
-    def SAVE(paramsdict):
-        return 'SAVE infohash={infohash} index={index} path={path}'.format(**paramsdict)
+    def SAVE(**paramsdict):
+        return 'SAVE infohash={infohash} index={index} path={path}'.format(paramsdict)
 
     @staticmethod
     def LIVESEEK(timestamp):
